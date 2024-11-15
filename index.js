@@ -16,6 +16,7 @@ app.get("/", async (req, res) => {
         res.status(500);
     }   
 });
+router.get("/", forwardAuthenticated, (req, res) => res.render("index.html")); 
 
 app.listen(port, () => {
     console.log(`Server Running on port ${port}.`)
